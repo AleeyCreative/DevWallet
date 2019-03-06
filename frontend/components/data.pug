@@ -1,0 +1,36 @@
+- 
+ function dateHandler(date) {
+ var difference =  Date.now() - date.getTime()
+ var gone = Math.floor(difference/(1000*60*60*24))
+ return gone <= 0 ? " today " : gone == 1 ? "yesterday" : gone + " days ago" 
+ 
+ }
+
+
+
+
+mixin item(api)
+ - links = {del:"/delete/" + api.id,  edit:"/dashboard/edit/" + api.id }
+ div.item.card-panel
+  div.logo
+  div.info
+   div.title=api.title
+   div.api-password=api.password
+   if(api.apiKey!=="")
+    div.api-key=api.apiKey 
+     span.mdi.mdi-content-copy.copy(title=copy)
+   if(api.secret!="")
+    div.secret=api.secret
+     span.mdi.mdi-content-copy.copy(title=copy)
+   div.date=dateHandler(api.date)
+  div.actions
+   a(href=links.del)
+    span.mdi.mdi-delete
+   a(href=links.edit)
+    span.mdi.mdi-pen
+
+if(apis)
+ each api,i in apis 
+  +item(api)
+if(apis.length < 1 )
+ div.card-panel.center.mdi.mdi-alert.green-text  No entries yet

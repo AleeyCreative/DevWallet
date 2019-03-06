@@ -1,0 +1,14 @@
+- var ic ="mdi mdi-"
+mixin item(icon,link,title)
+ a(href=link id=link)
+  div.link(class=ic+icon)
+   span #{title}
+  
+
+div.menu.col.l2.m2.hide-on-small-and-down.card-panel.z-index-3.text-lighten-4.flow-text
+ +item("plus",routes.add,"Add New")
+ +item("settings ",routes.setting,"Settings")
+ +item("iframe-outline", routes.api,"API")
+ +item("logout-variant", routes.logout,"Logout")
+
+  

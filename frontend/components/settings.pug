@@ -1,0 +1,12 @@
+
+mixin item(icon,link,name)
+  a(href=link)
+   div(class="mdi mdi-"+icon).settings-item  #{name}
+
+
+div.card-panel.l4.m4.s12
+ +item("account",routes.account,"Account")
+ +item("brush","/theme", "Theme")
+ +item("chat","/feedback","Feedback")
+ +item("settings-box","/personalize", "Personalize")
+ 

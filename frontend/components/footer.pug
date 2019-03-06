@@ -1,0 +1,17 @@
+- var ic = "mdi mdi-"
+- var year = new Date().toDateString().split(" ")[3]
+mixin item(icon, link, title)
+ a(href=link)
+  div.footer-icon-link(class=ic+icon) #{title}
+  
+div.footer
+ div.icons-area
+  +item("phone","tel:08104191324")
+  +item("twitter","https://twitter.com/AleeyCreative")
+  +item("email","mailto:alibaba!196@gmail.com")
+ div.msg
+  div.mdi.mdi-checkbox-marked-circle-outline.green-text  Connected
+ div
+ div.text This app was built by AliCreative
+ div.year Made | #{year}
+  

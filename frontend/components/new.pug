@@ -1,0 +1,18 @@
+mixin error(errormessage)
+ label.center
+  div.center.mdi.mdi-alert errormessage
+
+
+form.card-panel.details-input(method="POST", action=routes.add)
+ label.mdi.mdi-pen
+  input(type="text" name="title" placeholder="e.g AliCreative API")
+ label.mdi.mdi-key-variant
+  input(type="text" name ="password" placeholder="e.g ee44ewAsce")
+ label.mdi.mdi-key-variant
+  input(type="text" name ="apiKey" placeholder="e.g ee44ewAsce")
+ label.mdi.mdi-key
+  input(type="text" name = "secret" placeholder="e.g 443wwwzzxsdw... ")
+ label.center-align
+  button(type=submit).btn.btn-flat.waves-effect.waves-ripple Store
+ if(errormsg)
+  error(errormsg)

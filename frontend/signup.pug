@@ -1,0 +1,34 @@
+include mixins.pug
+include routes.pug
+- var path = {css:"../Assets/style.css", js:"../Assets/logic/index.js"}
+
+mixin showError(error)
+ div.red-text.mdi.mdi-alert  #{error}
+
+doctype html
+html
+ head
+  +head("DevWallet-Signup", path)
+body
+ nav
+  center Signup
+  
+ form.card-panel.container.form(method="post" action=routes.signup)
+  label.mdi.mdi-account.mdi-36px
+   input(name="name" placeholder="name" type="text")
+  label.mdi.mdi-key.mdi-36px    
+   input(name="password" placeholder="*****" type="password")
+  label.mdi.mdi-email.mdi-36px    
+   input(name="email" placeholder="someone@example.com" type="text")
+  label.center
+   button(type="submit").btn.btn-flat.waves-effect.waves-ripple Signup
+   a(href=routes.login)
+    div.mdi.mdi-help-circle.red-text.info Login to your account, if you have one   
+  label.center
+   if(error)
+    +showError(error)
+ div.footer 
+  div Made by AliCreative 
+  div  2019
+  
+  

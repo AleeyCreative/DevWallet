@@ -1,0 +1,14 @@
+-
+ var links ={}
+ links.mat = "../Assets/materialize/css/materialize.min.css"
+ links.icons = "../Assets/MaterialDesign-Webfonts/css/materialdesignicons.min.css"
+ links.matjs = "../Assets/materialize/js/materialize.min.js"
+ var sty = "stylesheet"
+
+mixin head(title,path)
+ meta(name="name" content="width=device-width")
+ link(rel=sty href=links.mat)
+ link(rel=sty href=links.icons)
+ script(src=links.matjs)
+ title=title
+ link(rel=sty href=path.css)

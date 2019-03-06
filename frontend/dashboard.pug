@@ -1,0 +1,38 @@
+include mixins.pug
+include routes.pug
+
+- 
+  var path = {css:"../Assets/style.css", js:"../Assets/logic/index.js", asset:"../Assets/jquery/dist/jquery.min.js", asset2:"../Assets/timeago/jquery.timeago.js"}
+
+doctype html
+html
+ head
+  +head("Devwallet - 	" + user.name, path)
+ body
+  dialog.mdi.mdi-alert.red-text Sorry ! No internet connection
+  nav
+   center 
+    div #{user.name} 's Dashboard
+  div.appbody.row
+   include components/menu.pug
+   div.col.l3.m3.hide-on-small.to-space
+   div.data.container.col.s12.l8.m7    
+    case view
+     when "home"
+      include components/data.pug
+     when "settings"
+      include components/settings.pug
+     when "new"
+      include components/new.pug
+     when "edit"
+      include components/edit.pug
+     when "account"
+      include components/account.pug
+     default
+      include components/data.pug
+  include components/footer.pug
+  script(src=path.js)
+  script(src=path.asset)
+  
+  
+  

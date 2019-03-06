@@ -1,0 +1,255 @@
+@icon-over-color: cyan;
+@over-shade:rgba(10%,10%,10%,.3);
+@small : ~ " and (max-width:400px)";
+@medium : ~ " and (max-width:700px)";
+
+@over: rgba(10%,10%,10%,.3),cyan;
+
+
+.dimen(@w,@h){
+width:@w;
+height:@h;
+}
+
+.paint(@b,@c){
+    background-color:@b;
+    color:@c;
+}
+
+.spacing(@p:0,@m:0){
+    margin:@m;
+    padding:@p;
+}
+
+body{
+    background-color:#f1f1f1;
+}
+.appbody{
+    margin:3px auto;
+    width:100%;
+}
+
+nav {
+    background-color: cadetblue;
+    font-size: 30px;
+    position:fixed;
+    width:100%;
+    top:0px;
+    left:0px;
+    z-index: 99;
+}
+
+#wheretop(@t: 0, @l: 0) {
+    top: @t;
+    left: @l;
+}
+
+#wherebottom(@b: 0, @l: 0) {
+    bottom: @b;
+    left: @l;
+}
+
+
+.form {
+    display: block;
+    margin: 10% auto;
+    width:60%;
+    border-radius: 10px;
+    transition: .4s ease-in-out;
+    label{ display:block; width:80%; margin: auto; font-size:1.2em;}
+    &:hover {
+        border-radius: 40px;
+    }
+}
+
+
+#fluid(@type, @j, @a, ) {
+    display: flex;
+    justify-content: @j;
+    align-items: @a;
+    flex-flow: @type;
+}
+
+.menu {
+    width: 250px;
+    height:100%;
+    padding: 2px 0px !important;
+    background-color: white;
+    overflow-x: auto;
+    font-size: 1.8em;
+    height: 100%;
+    position:fixed;
+    padding-top: 100px !important;
+//    border-right:1px solid blue;
+    transition: .4s ease-in-out;
+
+    &:hover {
+        
+    }
+
+    .link {
+        width: 100%;
+        #fluid(row nowrap, flex-start, center);
+        padding: 10px;
+        span { padding:0px 5px; }
+
+        &:hover {
+            color: white;
+            background-color:dimgray;
+        }
+    }
+
+}
+
+.footer {
+    position: fixed;
+    #wherebottom(0px, 0px);
+    width: 100%;
+    box-sizing: border-box;
+    background-color:black;
+    color: whitesmoke;
+    padding:3px;
+    #fluid(row nowrap, space-around,flex-end );
+
+    .icons-area {
+        #fluid(row nowrap, space-around ,center);
+        width: 150px;
+
+    }
+}
+
+
+.footer-icon-link {
+    font-size: .9em !important;
+    transition: .5s ease-in-out;
+    pointer:cursor;
+    &:hover {        
+        color: red !important;
+    }
+}
+
+.item{
+    
+    .logo{
+        border-radius:100%;
+        .dimen(20px,20px);
+        .paint(green,white);
+    }
+    .actions{}
+    .text{
+        .name{
+            font-weight: bold;
+            font-size: 1.13em;
+            letter-spacing: 1.5px;
+        }
+    }
+}
+
+
+.data{
+    width:60%;
+    padding-top: 8% !important;
+    margin:5px 5px;
+    .item{
+     #fluid(row nowrap,space-around,center);
+    .circle{
+           width:40px;
+           height:40px;
+           background-color: green;
+           border-radius:100%;
+           
+        }
+    .info{
+        box-sizing: border-box;
+        padding:4px;
+        width:60%;
+        .title{ font-weight:bold; letter-spacing: 1.3px;}
+        .api-key {}
+        .secret {}
+        .date{text-align:right; padding:3px; font-size:12px;}
+        }
+    .actions{
+        #fluid(row nowrap, space-around,center);
+        font-size:19px;
+        }
+    }
+}
+
+.copy{
+ font-size:14px;
+ padding:0 4px;
+cursor: pointer;
+position:relative;
+ transition:.4s ease-in-out;
+    &:hover{
+    color:chartreuse;
+        
+    }
+    
+}
+
+
+
+.details-input{
+    width:80%;
+    box-sizing: border-box;
+    label{    
+        width:70%;
+        box-sizing: border-box;
+        font-size:25px !important;
+        margin:2px auto;    
+        display:block !important;
+        input{
+//            transition:1s ease-in-out;
+            font-size:16px;
+            margin:10px;
+            border:none;
+            &:focus{
+//                padding:5px !important;
+                border:none;    
+            }
+        }
+    }
+}
+
+.settings-item{
+font-size:30px;
+padding: 10px 5px;
+transition:.4s;
+cursor: pointer;
+&:hover{
+color:white;
+background:rgba(10,10,10,.7);
+
+}
+}
+
+dialog::backdrop{
+    opacity:.3;
+}
+
+//.to-space{ margin-right:20% !important;}
+
+
+@media only screen @small {
+        .footer{
+            #fluid(column,center,center);
+        }
+    .item{
+        #fluid(column,flex-start,center);
+        
+    }
+    .data { margin:5px auto;}
+    nav {  }
+    .form { width:90%; margin: 20% auto; label{ font-size:.8em; width:85% !important;} }
+    .mdi::before {font-size:1.8em !important;}
+    }
+
+// styles for feedback
+.feedback{
+    padding:10px !important;
+    label{
+        display:block;
+        width:70%;
+    }
+}

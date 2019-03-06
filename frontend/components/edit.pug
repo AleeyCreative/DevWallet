@@ -1,0 +1,19 @@
+mixin error(errormsg)
+ label.center
+  div.center.mdi.mdi-alert errormsg
+
+
+form.card-panel.details-input(method="POST", action=routes.edit+api.id) 
+ label.mdi.mdi-pen
+  input(type="text" value=api.title name="title" placeholder="api")
+ label.mdi.mdi-key-variant
+  input(type="text" value=api.password name ="password" placeholder="")
+ label.mdi.mdi-key-variant
+  input(type="text" value=api.apiKey name = "apiKey" placeholder="")
+ label.mdi.mdi-key
+  input(type="text" value=api.secret name = "secret" placeholder=" ")
+  input(type="hidden" value=api.id name="id")
+ label.center-align
+  button(type=submit).btn.btn-flat.waves-effect.waves-ripple Update
+ if(errormsg)
+  +error(errormsg)
