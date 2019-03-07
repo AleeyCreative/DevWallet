@@ -2,15 +2,19 @@ include mixins.pug
 include routes.pug
 
 - 
-  var path = {css:"../Assets/style.css", js:"../Assets/logic/index.js", asset:"../Assets/jquery/dist/jquery.min.js", asset2:"../Assets/timeago/jquery.timeago.js"}
+  var path = {css:"../Assets/style.css", 
+  js:"../Assets/logic/index.js", 
+  responsive:"../Assets/responsive.css"
+  }
 
 doctype html
 html
  head
-  +head("Devwallet - 	" + user.name, path)
+  +head("Devwallet - " + user.name, path)
  body
   dialog.mdi.mdi-alert.red-text Sorry ! No internet connection
   nav
+   span.mdi.mdi-menu.hide.show-on-small hi there
    center 
     div #{user.name} 's Dashboard
   div.appbody.row
@@ -32,7 +36,6 @@ html
       include components/data.pug
   include components/footer.pug
   script(src=path.js)
-  script(src=path.asset)
   
   
   

@@ -7,6 +7,7 @@ var router = require("express").Router(),
     secret = "sefdsmjafnatdfkjbnfwbafbb485y3y7y43birajbajbe44ry4ru98yhafnajafhiwleh3288497y2hsfharhi84yhor",
     users = require("./Model/userModel.js"),
     apis = require("./Model/apiModel.js"),
+//  transport = require("./Tools/mailHandler")
     {loginValidation, signupValidation} = require("./Tools/validations.js")
 
 

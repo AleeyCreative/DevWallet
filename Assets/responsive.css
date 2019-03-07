@@ -1,0 +1,28 @@
+/* Handling responsiveness for smaller screens */
+
+@media only screen  and (max-width:750px){
+/* 	fonts for elements */
+	nav {
+		font-size:1.6em;
+	}
+	.form, .item{
+		font-size:.9em;
+	}
+	 .date {
+		font-size:.6em;
+	}
+	
+	.menu{
+		font-size:1.3em;
+	}
+	.footer{
+		font-size:.8em;
+	}
+/* 	positioning and layout */
+	.item{
+		width:90%;
+		margin:auto;
+	}
+	.item
+	
+}

@@ -32,9 +32,9 @@ mongoose.connect("mongodb://localhost/devwallet").then(function(){console.log("c
 .catch(function(err) { console.log(err.message)})
 
 //port to listen on
-var port = process.env.PORT || 3200
+var port = process.env.PORT || 3100
 
-var address = port === 3200 ? "http://localhost:3200" : " " 
+var address = port != process.env.PORT ? "http://localhost:3200" : " " 
 
 server.listen(port, function(){
     console.log("DevWallet : " + address )
