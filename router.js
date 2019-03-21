@@ -58,10 +58,10 @@ router.get(routes.home, function (req, res) {
     var ck = cookie.parse(req.headers.cookie || "")
     if (ck.token) {
         var decode = jwt.verify(ck.token, secret)
-        if (decode.id) res.redirect(routes.dashboard)
-        else res.redirect(routes.login)
+        if (decode.id) res.render("index.pug")
+        else res.render("index.pug")
     } else {
-        res.redirect(routes.login)
+
     }
 })
 
@@ -148,12 +148,11 @@ router.get(routes.dashboard, function (req, res) {
         var view = req.params.view
         //		console.log(apis_found)
         var apis = apis_found
-        apis[0].user.password = view != "account" ? null : apis[0].user.password
         res.render("dashboard", {
             view: view,
             apis,
             api: apis.filter(api => api.id === cookie.parse(req.headers.cookie || "").apiID)[0],
-            user: apis[0].user
+            user:  user_data
         })
     })
 })

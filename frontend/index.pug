@@ -4,9 +4,26 @@ doctype html
 html
  head
   +head("DevWallet", path)
-body
- nav
-  center DevWallet
-  div.appbody
-  
-script.
+  style.
+   .info{
+   margin: 10% auto !important;
+   }
+ body
+  nav
+   center DevWallet
+  div.card-panel.container.info
+   h3.center.blue-text Welcome to DevWallet
+   div.container.blue-text.text-darken-4 
+    p.
+     Are you a <span class=red-text> Developer ?  </span> <br> <br>
+     Hav you ever struggled trying to remember all passwords and apiKey of the different API providers
+     that you have signed up with ? <br> <br>
+     Then, struggle no more, DevWallet provides a unified location for everything so you don't have to
+     remember anything. You can login to view what you've saved or create an account to get started.
+    div.links.row
+     a(href="/login").col.m4.s12.l4
+      button.btn.flat.waves-effect.waves-ripple Login
+     div.col.m4.l4.s12
+     a(href="/signup").col.m4.s12.l4
+      button.btn.flat.waves-effect.waves-ripple Signup
+  include components/footer.pug
